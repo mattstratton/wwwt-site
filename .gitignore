@@ -43,3 +43,6 @@ next-env.d.ts
 # System files
 Thumbs.db
 .DS_Store
+
+# Netlify
+.netlify/
