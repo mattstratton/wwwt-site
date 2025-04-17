@@ -11,6 +11,8 @@ const nextConfig = {
     WWWT_AWS_REGION: process.env.WWWT_AWS_REGION,
     S3_BUCKET_NAME: process.env.S3_BUCKET_NAME,
   },
+  // Empty publicRuntimeConfig to ensure no secrets leak
+  publicRuntimeConfig: {},
   // Add security headers
   async headers() {
     return [
@@ -32,6 +34,14 @@ const nextConfig = {
         ],
       },
     ];
+  },
+  // Disable webpack5 cache in production
+  webpack: (config, { dev }) => {
+    if (!dev) {
+      // Disable persistent caching in production
+      config.cache = false;
+    }
+    return config;
   },
 };
 
