@@ -54,7 +54,51 @@ Open [http://localhost:3000](http://localhost:3000) to view the site.
 
 To add a video to the list, edit `config/videos.ts`:
 
+```typescript
+interface Video {
+  id: string;
+  title: string;
+  description: string;
+  filename: string;
+  thumbnail: string;
+  hidden?: boolean;
+}
+```
+
+Add your video entry to the `videos` array:
+
+```typescript
+{
+  id: 'unique-id',
+  title: 'Video Title',
+  description: 'Video Description',
+  filename: 'video-file.mp4', // must match the filename in S3
+  thumbnail: '/thumbnails/video-thumbnail.jpg',
+  hidden: false // optional, defaults to false
+}
+```
+
 The `filename` property should match the filename/path of your video in the S3 bucket.
+
+### Thumbnails
+
+Thumbnails should be placed in the `public/thumbnails` directory. You can generate thumbnails from your videos using ffmpeg:
+
+```bash
+# Generate a thumbnail from a specific timestamp (e.g., 5 seconds in)
+ffmpeg -i video.mp4 -ss 00:00:05 -frames:v 1 public/thumbnails/video-thumbnail.jpg
+```
+
+A placeholder thumbnail (`public/thumbnails/placeholder.svg`) is used by default until you add your own thumbnails.
+
+### Hidden Videos
+
+Videos can be hidden from the main library view by setting `hidden: true` in their configuration. Hidden videos are not displayed on the homepage but can still be accessed directly via their URL if you know the video ID.
+
+This is useful for:
+- Videos that are not ready to be published
+- Content that should only be shared via direct links
+- Archival content that shouldn't appear in the main library
 
 ## Security Considerations
 

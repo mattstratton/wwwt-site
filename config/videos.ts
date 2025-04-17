@@ -3,50 +3,66 @@ export interface Video {
   title: string;
   description: string;
   filename: string;
+  thumbnail: string;
+  hidden?: boolean;
 }
 
 export const videos: Video[] = [
   {
     id: 'trailer',
     title: 'When We Were Thin Trailer',
-    description: 'A silly trailer',
-    filename: 'trailer.mp4'
+    description: 'The trailer for this whole thing',
+    filename: 'trailer.mp4',
+    thumbnail: '/thumbnails/trailer.jpg',
+    hidden: false
   },
   // Add your other videos here following the same pattern
   {
     id: 'video1',
     title: 'The Mixer Video',
-    description: 'First episode of the series',
-    filename: 'mixer-main.mp4'
+    description: 'A video made by Jay, Clint, and Matt for their senior year for a music department mixer social event',
+    filename: 'mixer-main.mp4',
+    thumbnail: '/thumbnails/mixer-main.jpg',
+    hidden: false
   },
   {
     id: 'video2',
     title: 'The Mixer Video (commentary)',
     description: 'The Mixer Video, with commentary',
-    filename: 'mixer-commentary.mp4'
+    filename: 'mixer-commentary.mp4',
+    thumbnail: '/thumbnails/mixer-commentary.jpg',
+    hidden: false
   },
   {
     id: 'video3',
-    title: 'Promo Video',
-    description: 'Third episode of the series',
-    filename: 'prom.mp4'
+    title: 'Prom Video',
+    description: 'Willowbrook High School Prom 1993',
+    filename: 'prom.mp4',
+    thumbnail: '/thumbnails/prom.jpg',
+    hidden: false
   },
   {
     id: 'video4',
-    title: 'Birthday Video',
-    description: 'Fourth episode of the series',
-    filename: 'clint-birthday.mp4'
+    title: 'Clint and Conan Birthday Video',
+    description: 'A video made for Clint and Conan to celebrate their birthdays',
+    filename: 'clint-birthday.mp4',
+    thumbnail: '/thumbnails/clint-birthday.jpg',
+    hidden: false
   },
   {
     id: 'video5',
     title: 'Random Shit',
-    description: 'Fifth episode of the series',
-    filename: 'randoms.mp4'
+    description: 'Collection of random videos, including a very problematic skit with Clint and Buffy',
+    filename: 'randoms.mp4',
+    thumbnail: '/thumbnails/randoms.jpg',
+    hidden: false
   },
   {
     id: 'video6',
     title: 'Jay Dancing',
-    description: 'Sixth episode of the series',
-    filename: 'jay.mp4'
+    description: 'Bonus Track featuring Jay',
+    filename: 'jay.mp4',
+    thumbnail: '/thumbnails/placeholder.svg',
+    hidden: true
   }
 ]; 
