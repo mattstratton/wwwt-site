@@ -42,7 +42,7 @@ export default async function VideoPage({ params }: VideoPageProps) {
         <h1 className="text-4xl font-bold mb-4">{video.title}</h1>
         <p className="text-gray-600 mb-8">{video.description}</p>
         <div className="aspect-video bg-black rounded-lg overflow-hidden">
-          <VideoPlayer videoKey={video.id} />
+          <VideoPlayer videoKey={video.filename} />
         </div>
       </div>
     </main>
