@@ -52,15 +52,9 @@ Open [http://localhost:3000](http://localhost:3000) to view the site.
 
 ## Usage
 
-To display a video, use the VideoPlayer component:
+To add a video to the list, edit `config/videos.ts`:
 
-```tsx
-import VideoPlayer from '@/components/VideoPlayer';
-
-<VideoPlayer videoKey="path/to/your/video.mp4" />
-```
-
-The `videoKey` prop should match the key (path) of your video in the S3 bucket.
+The `filename` property should match the filename/path of your video in the S3 bucket.
 
 ## Security Considerations
 
