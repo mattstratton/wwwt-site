@@ -17,7 +17,7 @@ export default function VideoPlayer({ videoKey }: VideoPlayerProps) {
         setIsLoading(true);
         setError('');
         console.log('Fetching presigned URL for video:', videoKey);
-        const response = await fetch(`/api/presigned-url?key=${encodeURIComponent(videoKey)}`);
+        const response = await fetch(`/api/presigned-url?videoKey=${encodeURIComponent(videoKey)}`);
         const data = await response.json();
         
         if (!response.ok) {

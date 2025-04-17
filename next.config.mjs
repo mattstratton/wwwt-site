@@ -1,9 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  experimental: {
-    serverActions: true,
+  output: 'standalone',
+  images: {
+    unoptimized: true,
   },
-  // Ensure AWS credentials are only available on the server
+  // Remove experimental.serverActions as it's now enabled by default
   serverRuntimeConfig: {
     // Will only be available on the server side
     WWWT_AWS_ACCESS_KEY_ID: process.env.WWWT_AWS_ACCESS_KEY_ID,
@@ -35,13 +36,18 @@ const nextConfig = {
       },
     ];
   },
-  // Disable webpack5 cache in production
-  webpack: (config, { dev }) => {
-    if (!dev) {
-      // Disable persistent caching in production
-      config.cache = false;
+  // Add this to prevent environment variables from being exposed
+  webpack: (config, { isServer }) => {
+    if (!isServer) {
+      // Don't bundle AWS SDK on the client side
+      config.resolve.fallback = {
+        aws4: false,
+        'aws-sdk': false,
+        '@aws-sdk/client-s3': false,
+        '@aws-sdk/s3-request-presigner': false,
+      }
     }
-    return config;
+    return config
   },
 };
 
