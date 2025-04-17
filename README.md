@@ -119,3 +119,7 @@ The following environment variables need to be set:
 ### Clerk Authentication
 - `NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY`: Your Clerk publishable key
 - `CLERK_SECRET_KEY`: Your Clerk secret key 
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details. 
