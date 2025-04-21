@@ -18,7 +18,7 @@ export const videos: Video[] = [
   },
   // Add your other videos here following the same pattern
   {
-    id: 'video1',
+    id: 'mixer-main',
     title: 'The Mixer Video',
     description: 'A video made by Jay, Clint, and Matt for their senior year for a music department mixer social event',
     filename: 'mixer-main.mp4',
@@ -26,7 +26,7 @@ export const videos: Video[] = [
     hidden: false
   },
   {
-    id: 'video2',
+    id: 'mixer-commentary',
     title: 'The Mixer Video (commentary)',
     description: 'The Mixer Video, with commentary',
     filename: 'mixer-commentary.mp4',
@@ -34,7 +34,7 @@ export const videos: Video[] = [
     hidden: false
   },
   {
-    id: 'video3',
+    id: 'prom',
     title: 'Prom Video',
     description: 'Willowbrook High School Prom 1993',
     filename: 'prom.mp4',
@@ -42,7 +42,7 @@ export const videos: Video[] = [
     hidden: false
   },
   {
-    id: 'video4',
+    id: 'birthday',
     title: 'Clint and Conan Birthday Video',
     description: 'A video made for Clint and Conan to celebrate their birthdays',
     filename: 'clint-birthday.mp4',
@@ -50,7 +50,7 @@ export const videos: Video[] = [
     hidden: false
   },
   {
-    id: 'video5',
+    id: 'randoms',
     title: 'Random Shit',
     description: 'Collection of random videos, including a very problematic skit with Clint and Buffy',
     filename: 'randoms.mp4',
@@ -58,7 +58,7 @@ export const videos: Video[] = [
     hidden: false
   },
   {
-    id: 'video6',
+    id: 'secret',
     title: 'Jay Dancing',
     description: 'Bonus Track featuring Jay',
     filename: 'jay.mp4',
