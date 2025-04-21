@@ -1,7 +1,7 @@
 export const siteConfig = {
   name: "When We Were Thin",
   footer: {
-    copyrightText: "© 2024 When We Were Thin. All rights reserved.",
+    copyrightText: "© 2025 When We Were Thin. All rights reserved.",
     links: [
       {
         text: "Security & Privacy",
